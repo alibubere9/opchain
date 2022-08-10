@@ -78,9 +78,9 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
             decoration: BoxDecoration(
               color: Color(0xfff5f8fe),
               border: Border(
-                bottom: BorderSide(width: 0.5, color: Colors.grey),
-                right: BorderSide(width: 0.5, color: Colors.grey),
-                left: BorderSide(width: 0.5, color: Colors.grey),
+                bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+                right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+                left: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
               ),
             ),
             child: Visibility(
@@ -89,8 +89,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                 decoration: BoxDecoration(
                     color: Color(0xfff5d6da),
                     borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(3),
-                        topRight: Radius.circular(3))),
+                        bottomRight: Radius.circular(7),
+                        topRight: Radius.circular(7))),
                 height: 30,
                 width: width * (Random().nextInt(10) / 10),
               ),
@@ -99,6 +99,7 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
           Center(
             child: Text(
               optionChainModel.call.ltp.toStringAsFixed(2),
+              style: TextStyle(fontSize: 13),
             ),
           ),
         ],
@@ -112,11 +113,14 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
           decoration: BoxDecoration(
             color: Color(0xfff5f8fe),
             border: Border(
-              bottom: BorderSide(width: 0.5, color: Colors.grey),
-              right: BorderSide(width: 0.5, color: Colors.grey),
+              bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+              right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
             ),
           ),
-          child: Text(optionChainModel.call.spread.toStringAsFixed(2))),
+          child: Text(
+            optionChainModel.call.spread.toStringAsFixed(2),
+            style: TextStyle(fontSize: 13),
+          )),
     );
     var callBid = DataCell(
       Stack(
@@ -129,8 +133,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
             decoration: BoxDecoration(
               color: Color(0xfff5f8fe),
               border: Border(
-                bottom: BorderSide(width: 0.5, color: Colors.grey),
-                right: BorderSide(width: 0.5, color: Colors.grey),
+                bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+                right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
               ),
             ),
             child: Visibility(
@@ -141,18 +145,19 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                 decoration: BoxDecoration(
                     color: Color(0xfff5d6da),
                     borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(3),
-                        bottomRight: Radius.circular(3))),
+                        topRight: Radius.circular(7),
+                        bottomRight: Radius.circular(7))),
               ),
             ),
           ),
           Center(
             child: Text(
               optionChainModel.call.bid.toStringAsFixed(2),
+              style: TextStyle(fontSize: 13),
             ),
           ),
           Visibility(
-            visible: (index == 3 || index == 5) || (index == 2 || index == 4),
+            visible: (index == 3 || index == 5) || (index == 4),
             child: Align(
               alignment: Alignment.topLeft,
               child: Container(
@@ -163,8 +168,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                 decoration: BoxDecoration(
                   color: (index == 2 || index == 5) ? Colors.red : Colors.green,
                   border: Border(
-                    bottom: BorderSide(width: 0.5, color: Colors.grey),
-                    right: BorderSide(width: 0.5, color: Colors.grey),
+                    bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+                    right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
                   ),
                 ),
                 child: Text(
@@ -185,11 +190,14 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
           decoration: BoxDecoration(
             color: Color(0xfff5f8fe),
             border: Border(
-              bottom: BorderSide(width: 0.5, color: Colors.grey),
-              right: BorderSide(width: 0.5, color: Colors.grey),
+              bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+              right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
             ),
           ),
-          child: Text(optionChainModel.call.ask.toStringAsFixed(2))),
+          child: Text(
+            optionChainModel.call.ask.toStringAsFixed(2),
+            style: TextStyle(fontSize: 13),
+          )),
     );
     var f = NumberFormat("##,###", "en_US");
     var strike = DataCell(
@@ -203,8 +211,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
             decoration: BoxDecoration(
               color: Color(0xfffefaf5),
               border: Border(
-                bottom: BorderSide(width: 0.5, color: Colors.grey),
-                right: BorderSide(width: 0.5, color: Colors.grey),
+                bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+                right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
               ),
             ),
             child: Visibility(
@@ -218,7 +226,7 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
           Center(
             child: Text(
               f.format(optionChainModel.strike),
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
             ),
           ),
         ],
@@ -233,11 +241,14 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border(
-              bottom: BorderSide(width: 0.5, color: Colors.grey),
-              right: BorderSide(width: 0.5, color: Colors.grey),
+              bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+              right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
             ),
           ),
-          child: Text(optionChainModel.put.ask.toStringAsFixed(2))),
+          child: Text(
+            optionChainModel.put.ask.toStringAsFixed(2),
+            style: TextStyle(fontSize: 13),
+          )),
     );
     var putBid = DataCell(
       Stack(
@@ -250,8 +261,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border(
-                bottom: BorderSide(width: 0.5, color: Colors.grey),
-                right: BorderSide(width: 0.5, color: Colors.grey),
+                bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+                right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
               ),
             ),
             child: Visibility(
@@ -262,18 +273,19 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                 decoration: BoxDecoration(
                     color: Colors.green.withOpacity(0.2),
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(3),
-                        bottomLeft: Radius.circular(3))),
+                        topLeft: Radius.circular(7),
+                        bottomLeft: Radius.circular(7))),
               ),
             ),
           ),
           Center(
             child: Text(
               optionChainModel.put.bid.toStringAsFixed(2),
+              style: TextStyle(fontSize: 13),
             ),
           ),
           Visibility(
-            visible: (index == 3 || index == 5) || (index == 2 || index == 4),
+            visible: (index == 3 || index == 5) || (index == 4),
             child: Align(
               alignment: Alignment.topRight,
               child: Container(
@@ -284,8 +296,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                 decoration: BoxDecoration(
                   color: (index == 2 || index == 5) ? Colors.green : Colors.red,
                   border: Border(
-                    bottom: BorderSide(width: 0.5, color: Colors.grey),
-                    right: BorderSide(width: 0.5, color: Colors.grey),
+                    bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+                    right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
                   ),
                 ),
                 child: Text(
@@ -306,8 +318,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border(
-              bottom: BorderSide(width: 0.5, color: Colors.grey),
-              right: BorderSide(width: 0.5, color: Colors.grey),
+              bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+              right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
             ),
           ),
           child: Text(optionChainModel.put.spread.toStringAsFixed(2))),
@@ -325,8 +337,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                    bottom: BorderSide(width: 0.5, color: Colors.grey),
-                    right: BorderSide(width: 0.5, color: Colors.grey),
+                    bottom: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
+                    right: BorderSide(width: 0.5, color: Color(0xffe9ecee)),
                   ),
                 ),
                 child: Container(
@@ -335,13 +347,14 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                   decoration: BoxDecoration(
                       color: Colors.green.withOpacity(0.2),
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(3),
-                          bottomLeft: Radius.circular(3))),
+                          topLeft: Radius.circular(7),
+                          bottomLeft: Radius.circular(7))),
                 )),
           ),
           Center(
             child: Text(
               optionChainModel.put.ltp.toStringAsFixed(2),
+              style: TextStyle(fontSize: 13),
             ),
           ),
         ],
@@ -416,8 +429,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                       : 1.14),
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 1, color: Colors.grey)),
+                                  border: Border.all(
+                                      width: 1, color: Color(0xffe9ecee))),
                               child: Center(
                                   child: Text(
                                 "Call".toUpperCase(),
@@ -427,8 +440,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                             width: 40,
                             height: 40,
                             decoration: BoxDecoration(
-                                border:
-                                    Border.all(width: 1, color: Colors.grey)),
+                                border: Border.all(
+                                    width: 1, color: Color(0xffe9ecee))),
                             child: IconButton(
                                 onPressed: () {
                                   if (visibleColumnType ==
@@ -463,8 +476,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                             height: 40,
                             width: 40,
                             decoration: BoxDecoration(
-                                border:
-                                    Border.all(width: 1, color: Colors.grey)),
+                                border: Border.all(
+                                    width: 1, color: Color(0xffe9ecee))),
                             child: IconButton(
                                 onPressed: () {
                                   if (visibleColumnType ==
@@ -490,8 +503,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                       : 1.14),
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 1, color: Colors.grey)),
+                                  border: Border.all(
+                                      width: 1, color: Color(0xffe9ecee))),
                               child: Center(
                                   child: Text(
                                 "put".toUpperCase(),
@@ -525,10 +538,10 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                               border: Border(
                                                 bottom: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                                 right: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                               ),
                                             ),
                                             alignment: Alignment.center,
@@ -547,10 +560,10 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                               border: Border(
                                                 bottom: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                                 right: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                               ),
                                             ),
                                             alignment: Alignment.center,
@@ -569,10 +582,10 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                               border: Border(
                                                 bottom: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                                 right: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                               ),
                                             ),
                                             alignment: Alignment.center,
@@ -607,10 +620,10 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                               border: Border(
                                                 bottom: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                                 right: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                               ),
                                             ),
                                             alignment: Alignment.center,
@@ -645,10 +658,10 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                               border: Border(
                                                 bottom: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                                 right: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                               ),
                                             ),
                                             alignment: Alignment.center,
@@ -673,7 +686,8 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                                     Text(
                                                       "(12)",
                                                       style: TextStyle(
-                                                          color: Colors.grey,
+                                                          color:
+                                                              Color(0xffe9ecee),
                                                           fontSize: 10),
                                                     ),
                                                     SizedBox(
@@ -694,10 +708,10 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                               border: Border(
                                                 bottom: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                                 right: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                               ),
                                             ),
                                             alignment: Alignment.center,
@@ -729,10 +743,10 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                               border: Border(
                                                 bottom: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                                 right: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                               ),
                                             ),
                                             alignment: Alignment.center,
@@ -764,10 +778,10 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                               border: Border(
                                                 bottom: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                                 right: BorderSide(
                                                     width: 0.5,
-                                                    color: Colors.grey),
+                                                    color: Color(0xffe9ecee)),
                                               ),
                                             ),
                                             alignment: Alignment.center,
@@ -803,16 +817,17 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                     ],
                   ),
                   Positioned(
-                    top: MediaQuery.of(context).size.width / 5 * 1.65,
+                    top: MediaQuery.of(context).size.width / 5 * 1.7,
                     child: Container(
                       child: Row(
                         children: [
                           Text("SD - 1",
-                              style:
-                                  TextStyle(color: Colors.brown, fontSize: 10)),
+                              style: TextStyle(
+                                  color: Color(0xffd0ac7c), fontSize: 10)),
                           Text(
-                            " -------------------------------------------------------------",
-                            style: TextStyle(color: Colors.brown, fontSize: 25),
+                            " ------------------------------------------------------------------------------------------------",
+                            style: TextStyle(
+                                color: Color(0xffd0ac7c), fontSize: 17),
                           ),
                         ],
                       ),
@@ -835,7 +850,7 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                           Container(
                             width: MediaQuery.of(context).size.width,
                             color: Colors.blue.shade700,
-                            height: 1,
+                            height: 3,
                           )
                         ],
                       ),
@@ -847,11 +862,12 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                       child: Row(
                         children: [
                           Text("SD - 2",
-                              style:
-                                  TextStyle(color: Colors.brown, fontSize: 10)),
+                              style: TextStyle(
+                                  color: Color(0xffd0ac7c), fontSize: 10)),
                           Text(
                             " -------------------------------------------------------------",
-                            style: TextStyle(color: Colors.brown, fontSize: 25),
+                            style: TextStyle(
+                                color: Color(0xffd0ac7c), fontSize: 25),
                           ),
                         ],
                       ),

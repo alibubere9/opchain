@@ -686,8 +686,7 @@ class _OptionChainWidgetState extends State<OptionChainWidget> {
                                                     Text(
                                                       "(12)",
                                                       style: TextStyle(
-                                                          color:
-                                                              Color(0xffe9ecee),
+                                                          color: Colors.grey,
                                                           fontSize: 10),
                                                     ),
                                                     SizedBox(
